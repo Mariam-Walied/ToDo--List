@@ -79,7 +79,7 @@ window.addEventListener("load", () => {
 })
 
 updateitem.addEventListener("click", () => {
- if(dataentry.value!=''&&dataId!=''){
+ if(dataentry.value!=''&&dataId<=0){
     console.log(dataId,'dataId')
     data.splice(dataId, 1, dataentry.value);
     localStorage.setItem("data", JSON.stringify(data));
