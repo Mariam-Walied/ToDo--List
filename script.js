@@ -15,16 +15,16 @@ function deletUser(x) {
     localStorage.setItem("data", JSON.stringify(data));
     result.innerHTML = "";
     data.map(
-        (x, id) =>
-        (result.innerHTML += `
+    (x,id) =>
+    (result.innerHTML += `
     <div  class="d-flex justify-content-center align-items-center gap-2 perentDiv">
     <p class="p-0 m-0">${x}</p>
     <button class="border-0 bg-transparent  btn1 "> <i class="fa-solid fa-circle-xmark  text-danger"></i></button>
-    <button class="border-0 bg-transparent btn2" onclick=" updateData(${x}) "><i class= "fa-solid fa-pen-to-square text-warning"></i></button>
+    <button class="border-0 bg-transparent btn2" onclick=" updateData('${x}',${id}) "><i class= "fa-solid fa-pen-to-square text-warning"></i></button>
 </div>
 
         `)
-    )
+    );
     if(data.length >0 ){
         pendingTask.innerText=`You have  ${data.length} pending tasks`
     }else{
